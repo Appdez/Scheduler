@@ -1,4 +1,21 @@
 {
+    "/js/laravel.app.js": "/js/laravel.app.js",
+    "/js/oneui.app.js": "/js/oneui.app.js",
+    "/js/pages/tables_datatables.js": "/js/pages/tables_datatables.js",
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/themes/modern.css": "/css/themes/modern.css",
+    "/css/themes/flat.css": "/css/themes/flat.css",
+    "/css/themes/city.css": "/css/themes/city.css",
+    "/css/themes/amethyst.css": "/css/themes/amethyst.css",
+    "/css/oneui.css": "/css/oneui.css",
+    "/css/themes/smooth.css": "/css/themes/smooth.css",
+    "/frontend/.gitattributes": "/frontend/.gitattributes",
+    "/frontend/about.html": "/frontend/about.html",
+    "/frontend/changelog.md": "/frontend/changelog.md",
+    "/frontend/contact.html": "/frontend/contact.html",
+    "/frontend/documentation.html": "/frontend/documentation.html",
+    "/frontend/hire-us.html": "/frontend/hire-us.html",
+    "/frontend/index.html": "/frontend/index.html",
+    "/frontend/license": "/frontend/license",
+    "/frontend/service.html": "/frontend/service.html"
 }
