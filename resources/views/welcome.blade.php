@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Dtox</title>
+  <title>{{config('app.name')}}</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,63 +33,7 @@
 <body>
   
 
-{{-- <!-- navigation -->
-<section class="fixed-top navigation">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="index.html"><img src="{{ asset('frontend/images/logo.png')}}" height="45px" alt="logo"></a>
-      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- navbar -->
-      <div class="collapse navbar-collapse text-center" id="navbar">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link page-scroll" href="#feature">Feature</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="service.html">Service</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link page-scroll" href="#team">Team</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link page-scroll" href="#pricing">Pricing</a>
-          </li>
-         
-        </ul>
-        @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                    <a href="{{ url('/home') }}" class="btn btn-primary ml-lg-3 primary-shadow">Agendar</a>
-                        <a href="" class="text-sm text-gray-700 dark:text-gray-500 underline"></a>
-                    @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
-                      </li>
-                        @if (Route::has('register'))
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">Registar-se</a>
-                      </li>
-                               @endif
-                    @endauth
-                </div>
-            @endif
-
-        
-      </div>
-    </nav>
-  </div>
-</section>
-<!-- /navigation --> --}}
 
 <!-- hero area -->
 <section class="hero-section hero" data-background="" style="padding-top:50px; background-image: url({{('frontend/images/hero-area/banner-bg.png')}});">
@@ -198,7 +142,7 @@
     <div class="col-10 mx-auto">
       <div class="team-slider">
         <!-- team-member -->
-        <div class="team-member">
+        <div class="team-member" style="border-radius:50px">
           <div class="d-flex mb-4">
             <div class="mr-3">
               <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-1.jpg')}}" alt="team-member">
@@ -211,55 +155,53 @@
           <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
         </div>
         <!-- team-member -->
-        <div class="team-member">
-          <div class="d-flex mb-4">
-            <div class="mr-3">
-              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-2.jpg')}}" alt="team-member">
-            </div>
-            <div class="align-self-center">
-              <h4>John Doe</h4>
-              <h6 class="text-color">web developer</h6>
-            </div>
-          </div>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-        </div>
-        <!-- team-member -->
-        <div class="team-member">
-          <div class="d-flex mb-4">
-            <div class="mr-3">
-              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-3.jpg')}}" alt="team-member">
-            </div>
-            <div class="align-self-center">
-              <h4>Erik Ligas</h4>
-              <h6 class="text-color">Programmer</h6>
-            </div>
-          </div>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-            the blind texts. S eparated they</p>
-        </div>
-        <!-- team-member -->
-        <div class="team-member">
+        <div class="team-member" style="border-radius:50px">
           <div class="d-flex mb-4">
             <div class="mr-3">
               <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-1.jpg')}}" alt="team-member">
             </div>
             <div class="align-self-center">
-              <h4>Erik Ligas</h4>
-              <h6 class="text-color">Programmer</h6>
+              <h4>Becroft</h4>
+              <h6 class="text-color">web designer</h6>
             </div>
           </div>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-            the blind texts. S eparated they</p>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
         </div>
         <!-- team-member -->
-        <div class="team-member">
+        <div class="team-member" style="border-radius:50px">
           <div class="d-flex mb-4">
             <div class="mr-3">
-              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-2.jpg')}}" alt="team-member">
+              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-1.jpg')}}" alt="team-member">
             </div>
             <div class="align-self-center">
-              <h4>John Doe</h4>
-              <h6 class="text-color">web developer</h6>
+              <h4>Becroft</h4>
+              <h6 class="text-color">web designer</h6>
+            </div>
+          </div>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
+        </div>
+        <!-- team-member -->
+        <div class="team-member" style="border-radius:50px">
+          <div class="d-flex mb-4">
+            <div class="mr-3">
+              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-1.jpg')}}" alt="team-member">
+            </div>
+            <div class="align-self-center">
+              <h4>Becroft</h4>
+              <h6 class="text-color">web designer</h6>
+            </div>
+          </div>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
+        </div>
+        <!-- team-member -->
+        <div class="team-member" style="border-radius:50px">
+          <div class="d-flex mb-4">
+            <div class="mr-3">
+              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-1.jpg')}}" alt="team-member">
+            </div>
+            <div class="align-self-center">
+              <h4>Becroft</h4>
+              <h6 class="text-color">web designer</h6>
             </div>
           </div>
           <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
@@ -277,148 +219,6 @@
 </section>
 <!-- /team -->
 
-<!-- pricing -->
-<section class="section-lg pb-0 pricing" id="pricing">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-title">Our Pricing</h2>
-        <p class="mb-50">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu <br>
-          fugiat nulla pariatur. Excepteur sint occaecat </p>
-      </div>
-      <div class="col-lg-10 mx-auto">
-        <div class="row justify-content-center">
-          <!-- pricing table -->
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-            <div class="rounded text-center pricing-table table-1">
-              <h3>Free</h3>
-              <h1><span>$</span>00</h1>
-              <p>Far far away, behind the
-                wordmountains, far from the
-                countries Vokalia and
-              </p>
-              <a href="#" class="btn pricing-btn px-2">Get Started</a>
-            </div>
-          </div>
-          <!-- pricing table -->
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-            <div class="rounded text-center pricing-table table-2">
-              <h3>Standard</h3>
-              <h1><span>$</span>75</h1>
-              <p>Far far away, behind the
-                wordmountains, far from the
-                countries Vokalia and
-              </p>
-              <a href="#" class="btn pricing-btn px-2">Buy Now</a>
-            </div>
-          </div>
-          <!-- pricing table -->
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-            <div class="rounded text-center pricing-table table-3">
-              <h3>Premium</h3>
-              <h1><span>$</span>99</h1>
-              <p>Far far away, behind the
-                wordmountains, far from the
-                countries Vokalia and
-              </p>
-              <a href="#" class="btn pricing-btn px-2">Buy Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- background shapes -->
-  <img class="pricing-bg-shape-1 up-down-animation" src="{{ asset('frontend/images/background-shape/seo-ball-1.png')}}" alt="background-shape">
-  <img class="pricing-bg-shape-2 up-down-animation" src="{{ asset('frontend/images/background-shape/seo-half-cycle.png')}}" alt="background-shape">
-  <img class="pricing-bg-shape-3 left-right-animation" src="{{ asset('frontend/images/background-shape/team-bg-triangle.png')}}" alt="background-shape">
-</section>
-<!-- /pricing -->
-
-<!-- client logo slider -->
-<section class="section">
-  <div class="container">
-      <div class="client-logo-slider align-self-center">
-          <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend/images/clients-logo/client-logo-1.png')}}" alt="client-logo"></a>
-          <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend/images/clients-logo/client-logo-2.png')}}" alt="client-logo"></a>
-          <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend/images/clients-logo/client-logo-3.png')}}" alt="client-logo"></a>
-          <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend/images/clients-logo/client-logo-4.png')}}" alt="client-logo"></a>
-          <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend/images/clients-logo/client-logo-5.png')}}" alt="client-logo"></a>
-          <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend/images/clients-logo/client-logo-1.png')}}" alt="client-logo"></a>
-          <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend/images/clients-logo/client-logo-2.png')}}" alt="client-logo"></a>
-          <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend/images/clients-logo/client-logo-3.png')}}" alt="client-logo"></a>
-          <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend/images/clients-logo/client-logo-4.png')}}" alt="client-logo"></a>
-          <a href="#" class="text-center d-block outline-0 p-5"><img class="d-unset img-fluid" src="{{ asset('frontend/images/clients-logo/client-logo-5.png')}}" alt="client-logo"></a>
-      </div>
-  </div>
-</section>
-<!-- /client logo slider -->
-
-<!-- newsletter -->
-<section class="newsletter">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2>Subscribe to our newsletter</h2>
-        <p class="mb-5">Receive updates, news and deals</p>
-      </div>
-      <div class="col-lg-8 col-sm-10 col-12 mx-auto">
-        <form action="#">
-          <div class="input-wrapper position-relative">
-            <input type="email" class="newsletter-form" id="newsletter" placeholder="Enter your email">
-            <button type="submit" value="send" class="btn newsletter-btn">subscribe</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- background shapes -->
-  <img class="newsletter-bg-shape left-right-animation" src="{{ asset('frontend/images/background-shape/seo-ball-2.png')}}" alt="background-shape">
-</section>
-<!-- /newsletter -->
-
-<!-- footer -->
-<footer class="footer-section footer" style="background-image: url(images/backgrounds/footer-bg.png')}});">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 text-center text-lg-left mb-4 mb-lg-0">
-        <!-- logo -->
-        <a href="index.html">
-          <img class="img-fluid" src="{{ asset('frontend/images/logo.png')}}" alt="logo">
-        </a>
-      </div>
-      <!-- footer menu -->
-      <nav class="col-lg-8 align-self-center mb-5">
-        <ul class="list-inline text-lg-right text-center footer-menu">
-          <li class="list-inline-item active"><a href="index.html">Home</a></li>
-          <li class="list-inline-item"><a class="page-scroll" href="#feature">Feature</a></li>
-          <li class="list-inline-item"><a href="about.html">About</a></li>
-          <li class="list-inline-item"><a class="page-scroll" href="#team">Team</a></li>
-          <li class="list-inline-item"><a class="page-scroll" href="#pricing">Pricing</a></li>
-          <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <!-- footer social icon -->
-      <nav class="col-12">
-        <ul class="list-inline text-lg-right text-center social-icon">
-          <li class="list-inline-item">
-            <a class="facebook" href="#"><i class="ti-facebook"></i></a>
-          </li>
-          <li class="list-inline-item">
-            <a class="twitter" href="#"><i class="ti-twitter-alt"></i></a>
-          </li>
-          <li class="list-inline-item">
-            <a class="linkedin" href="#"><i class="ti-linkedin"></i></a>
-          </li>
-          <li class="list-inline-item">
-            <a class="black" href="#"><i class="ti-github"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</footer>
-<!-- /footer -->
 
 <!-- jQuery -->
 <script src="{{ asset('frontend/plugins/jQuery/jquery.min.js')}}"></script>
