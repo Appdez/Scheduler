@@ -1,0 +1,11 @@
+/vendor
+/node_modules
+/storage/app/public
+.env
+/public/storage
+/public/media
+/public/frontend
+/public/vendor
+/public/css
+/public/js
+/public/fonts
