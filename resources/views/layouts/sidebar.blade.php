@@ -55,13 +55,13 @@
                                 
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link{{ request()->is('home') ? ' active' : '' }}" href="/home">
+                                <a class="nav-main-link{{ request()->is('schedule_service') ? ' active' : '' }}" href="{{ route('schedule_service.index') }}">
                                     <i class="nav-main-link-icon si si-anchor"></i>
                                     <span class="nav-main-link-name">Criar serviços</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link{{ request()->is('home') ? ' active' : '' }}" href="/home">
+                                <a class="nav-main-link{{ request()->is('document') ? ' active' : '' }}" href="{{ route('document.index') }}">
                                     <i class="nav-main-link-icon si si-doc"></i>
                                     <span class="nav-main-link-name">Registar documentos</span>
                                 </a>
