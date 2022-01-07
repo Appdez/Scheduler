@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AvgQueue;
+use App\Models\ClientScheduler;
 use App\Models\ScheduleService;
 use Illuminate\Http\Request;
 
@@ -35,7 +37,7 @@ class ScheduleServiceController extends Controller
             ScheduleService::create($schedule_service);
             return redirect()->back()->with('success','Serviço crado com sucesso');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error','erro ao adicionar Serviço');
+            return redirect()->back()->with('fail','erro ao adicionar Serviço');
         }
        
     }
@@ -61,7 +63,7 @@ class ScheduleServiceController extends Controller
             $schedule_Service->save();
             return redirect()->back()->with('success','Serviço actualizado com sucesso');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error','erro ao actualizar Serviço');
+            return redirect()->back()->with('fail','erro ao actualizar Serviço');
         }
     }
 
@@ -75,11 +77,18 @@ class ScheduleServiceController extends Controller
     {
         try {
             $schedule_Service->avg_queues()->sync([]);
-            $schedule_Service->client_schedulers()->sync([]);
+            if ( $schedule_Service->avg_queues->count() > 0 ) {
+                AvgQueue::where(
+                    'service_id', $schedule_Service->id
+                )->delete();
+            }
+            if ( $schedule_Service->client_schedulers->count() > 0 ) {
+                ClientScheduler::where('service_id',$schedule_Service->id)->delete();}
+
             $schedule_Service->delete();
             return redirect()->back()->with('success','Serviço deletado com sucesso');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error','erro ao deletar Serviço');
+            return redirect()->back()->with('fail','erro ao deletar Serviço');
         }
     }
 }

@@ -2,8 +2,17 @@
 @section('content')
    
     <div class="content">
-        
-                    <!-- Dynamic Table Full -->
+        @if(Session::has('success'))
+            <div class="alert alert-success">
+                {{Session::get('success')}}
+            </div>
+        @endif
+        @if(Session::has('fail'))
+        <div class="alert alert-danger">
+            {{Session::get('fail')}}
+        </div>
+    @endif
+           <!-- Dynamic Table Full -->
                     <div class="block block-rounded">
                         <div class="block-header">
                             <h3 class="block-title"> <small>Documentos</small></h3>
@@ -28,10 +37,10 @@
                                             <a href="be_pages_generic_blank.html">{{ $document->name}}</a>
                                         </td>
                                         <td class="d-none d-sm-table-cell font-size-sm">
-                                            <a href="{{ route('document.edit',$document->id) }}" class="btn  btn-rounded btn-alt-warning shadow-sm">Editar</a>
+                                            <a href="{{ route('document.edit',$document->id) }}" class="btn btn-alt-warning shadow-sm">Editar</a>
                                         </td>
                                         <td class="d-none d-sm-table-cell">
-                                            <button class="btn  btn-rounded btn-alt-danger shadow-sm" onclick="document.getElementById('Delete_{{ $document->id}}').submit()">Deletar</button>
+                                            <button class="btn   btn-alt-danger shadow-sm" onclick="document.getElementById('Delete_{{ $document->id}}').submit()">Deletar</button>
                                             <form action="{{ route('document.destroy',$document->id) }}" method="post" id="Delete_{{ $document->id}}"> @csrf
                                             @method('DELETE')</form>
                                         </td>

@@ -6,6 +6,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -22,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ClientDocument extends Model
 {
+	use HasFactory;
 	protected $table = 'client_documents';
 	public $incrementing = false;
 	public $timestamps = false;

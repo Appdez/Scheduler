@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClientDocument;
 use App\Models\Document;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class DocumentController extends Controller
             Document::create($document);
             return redirect()->back()->with('success','Documento crado com sucesso');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error','erro ao adicionar documento');
+            return redirect()->back()->with('fail','erro ao adicionar documento');
         }
        
     }
@@ -58,7 +59,7 @@ class DocumentController extends Controller
             $document->save();
             return redirect()->back()->with('success','Documento actualizado com sucesso');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error','erro ao actualizar documento');
+            return redirect()->back()->with('fail','erro ao actualizar documento');
         }
     }
 
@@ -71,11 +72,16 @@ class DocumentController extends Controller
     public function destroy(Document $document)
     {
         try {
-            $document->client_documents()->sync([]);
+            if($document->client_documents->count() > 0){
+                ClientDocument::where(
+                    'document_id' ,$document->id
+                )->delete();
+            }
             $document->delete();
             return redirect()->back()->with('success','Documento deletado com sucesso');
         } catch (\Throwable $th) {
-            return redirect()->back()->with('error','erro ao deletar documento');
+            dd($th);
+            return redirect()->back()->with('fail','erro ao deletar documento');
         }
     }
 }
