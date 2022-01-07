@@ -41,6 +41,26 @@ class DocumentController extends Controller
     }
 
     
+       /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\ClientScheduler  $clientScheduler
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Document $document)
+    {
+        return view('backend.view_document')->with(
+            'document',$document
+        );
+    }
+
+    public function create()
+    {
+        return view('backend.view_document')->with(
+            'document',null
+        );
+    }
+
     /**
      * Update the specified resource in storage.
      *

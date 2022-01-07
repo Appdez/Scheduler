@@ -131,6 +131,7 @@
     
         <!-- Page JS Code -->
         <script src="{{ asset('js/pages/tables_datatables.js') }}"></script>
+        @stack('js_after')
    
     
     </body>

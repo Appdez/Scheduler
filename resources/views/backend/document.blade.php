@@ -3,15 +3,45 @@
    
     <div class="content">
         @if(Session::has('success'))
-            <div class="alert alert-success">
-                {{Session::get('success')}}
+        <div class="alert alert-success alert-dismissable" role="alert">
+            <div class="flex-00-auto">
+                <i class="fa fa-fw fa-check"></i>
             </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <p class="mb-0">{{Session::get('success')}}!</p>
+        </div>
         @endif
         @if(Session::has('fail'))
-        <div class="alert alert-danger">
-            {{Session::get('fail')}}
+        <div class="alert alert-danger alert-dismissable" role="alert">
+            
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <p class="mb-0">{{Session::get('fail')}}!</p>
         </div>
     @endif
+    <div class="bg-white p-3 push">
+        <!-- Toggle Navigation -->
+        <div class="d-lg-none">
+            <!-- Class Toggle, functionality initialized in Helpers.coreToggleClass() -->
+            <button type="button" class="btn btn-block btn-light d-flex justify-content-between align-items-center" data-toggle="class-toggle" data-target="#horizontal-navigation-hover-normal" data-class="d-none">
+                Menu 
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    <div id="horizontal-navigation-hover-normal" class="d-none d-lg-block mt-2 mt-lg-0">
+        <ul class="nav-main nav-main-horizontal nav-main-hover">
+            <li class="nav-main-item">
+                <a class="nav-main-link active" href="{{ route('document.create') }}">
+                    <i class="nav-main-link-icon fa fa-plus"></i>
+                    <span class="nav-main-link-name">Novo Documento  </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    </div>
            <!-- Dynamic Table Full -->
                     <div class="block block-rounded">
                         <div class="block-header">

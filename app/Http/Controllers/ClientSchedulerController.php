@@ -53,7 +53,9 @@ class ClientSchedulerController extends Controller
      */
     public function edit(ClientScheduler $clientScheduler)
     {
-        //
+        return view('backend.view_client_scheduler')->with(
+            'client_scheduler',$clientScheduler
+        );
     }
 
     /**
