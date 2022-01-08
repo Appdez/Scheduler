@@ -16,8 +16,8 @@ class ClientSchedulerController extends Controller
     public function index()
     {
         
-        return view('backend.schedule_service')->with([
-            'client_schedulers' => ClientScheduler::all()
+        return view('backend.client_scheduler')->with([
+            'client_schedulers' => Auth::user()->client_schedulers
         ]);
         
     }
@@ -37,10 +37,10 @@ class ClientSchedulerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ClientScheduler  $clientScheduler
+     * @param  \App\Models\ClientScheduler  $client_scheduler
      * @return \Illuminate\Http\Response
      */
-    public function show(ClientScheduler $clientScheduler)
+    public function show(ClientScheduler $client_scheduler)
     {
         //
     }
@@ -48,13 +48,13 @@ class ClientSchedulerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ClientScheduler  $clientScheduler
+     * @param  \App\Models\ClientScheduler  $client_scheduler
      * @return \Illuminate\Http\Response
      */
-    public function edit(ClientScheduler $clientScheduler)
+    public function edit(ClientScheduler $client_scheduler)
     {
         return view('backend.view_client_scheduler')->with(
-            'client_scheduler',$clientScheduler
+            'client_scheduler',$client_scheduler
         );
     }
 
@@ -62,10 +62,10 @@ class ClientSchedulerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ClientScheduler  $clientScheduler
+     * @param  \App\Models\ClientScheduler  $client_scheduler
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ClientScheduler $clientScheduler)
+    public function update(Request $request, ClientScheduler $client_scheduler)
     {
         //
     }
@@ -73,10 +73,10 @@ class ClientSchedulerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ClientScheduler  $clientScheduler
+     * @param  \App\Models\ClientScheduler  $client_scheduler
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ClientScheduler $clientScheduler)
+    public function destroy(ClientScheduler $client_scheduler)
     {
         
     }

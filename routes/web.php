@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ClientSchedulerController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\ScheduleServiceController;
+use App\Models\ClientScheduler;
 use App\Models\ScheduleService;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +27,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/schedule_service',ScheduleServiceController::class);
 Route::resource('/document',DocumentController::class);
+Route::resource('client_scheduler', ClientSchedulerController::class);

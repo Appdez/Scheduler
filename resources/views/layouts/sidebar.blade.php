@@ -48,7 +48,7 @@
                                 
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link{{ request()->is('home') ? ' active' : '' }}" href="/home">
+                                <a class="nav-main-link{{ request()->is('client_scheduler*') ? ' active' : '' }}" href="{{ route('client_scheduler.index') }}">
                                     <i class="nav-main-link-icon si si-calendar"></i>
                                     <span class="nav-main-link-name">Agendar</span>
                                 </a>
