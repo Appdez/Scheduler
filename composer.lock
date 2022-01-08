@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ca5734639df9a2f4fa77c718e09ba00",
+    "content-hash": "21493dc2b3fad3b0785468e2c2314796",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7326,16 +7326,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.14.4",
+            "version": "2.14.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "f056f1fe935d9ed86e698905a957334029899895"
+                "reference": "a63e5e8f26ebbebf8ed3c5c691637325512eb0dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/f056f1fe935d9ed86e698905a957334029899895",
-                "reference": "f056f1fe935d9ed86e698905a957334029899895",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/a63e5e8f26ebbebf8ed3c5c691637325512eb0dc",
+                "reference": "a63e5e8f26ebbebf8ed3c5c691637325512eb0dc",
                 "shasum": ""
             },
             "require": {
@@ -7385,7 +7385,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.14.4"
+                "source": "https://github.com/filp/whoops/tree/2.14.5"
             },
             "funding": [
                 {
@@ -7393,7 +7393,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-03T12:00:00+00:00"
+            "time": "2022-01-07T12:00:00+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -7448,16 +7448,16 @@
         },
         {
             "name": "kitloong/laravel-migrations-generator",
-            "version": "v5.1.1",
+            "version": "v5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kitloong/laravel-migrations-generator.git",
-                "reference": "ded1b97a12db0f405e142f4eb6505fb426e148f8"
+                "reference": "b53917809a3165005a4d5b558c6c880d53668182"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kitloong/laravel-migrations-generator/zipball/ded1b97a12db0f405e142f4eb6505fb426e148f8",
-                "reference": "ded1b97a12db0f405e142f4eb6505fb426e148f8",
+                "url": "https://api.github.com/repos/kitloong/laravel-migrations-generator/zipball/b53917809a3165005a4d5b558c6c880d53668182",
+                "reference": "b53917809a3165005a4d5b558c6c880d53668182",
                 "shasum": ""
             },
             "require": {
@@ -7508,7 +7508,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kitloong/laravel-migrations-generator/issues",
-                "source": "https://github.com/kitloong/laravel-migrations-generator/tree/v5.1.1"
+                "source": "https://github.com/kitloong/laravel-migrations-generator/tree/v5.1.2"
             },
             "funding": [
                 {
@@ -7516,7 +7516,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-12-11T15:56:01+00:00"
+            "time": "2022-01-07T16:49:26+00:00"
         },
         {
             "name": "laravel/sail",
@@ -7666,9 +7666,6 @@
             },
             "require": {
                 "php": "^7.1 || ^8.0"
-            },
-            "replace": {
-                "myclabs/deep-copy": "self.version"
             },
             "require-dev": {
                 "doctrine/collections": "^1.0",
@@ -9701,7 +9698,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4"
+        "php": "^7.4 | ^8.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"

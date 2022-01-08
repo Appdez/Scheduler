@@ -141,71 +141,20 @@
     </div>
     <div class="col-10 mx-auto">
       <div class="team-slider">
-        <!-- team-member -->
+       
+        @foreach ($services as $item)
+             <!-- team-member -->
         <div class="team-member" style="border-radius:50px">
           <div class="d-flex mb-4">
-            <div class="mr-3">
-              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-1.jpg')}}" alt="team-member">
-            </div>
             <div class="align-self-center">
-              <h4>Becroft</h4>
-              <h6 class="text-color">web designer</h6>
+              <h4>{{$item->name}}</h4>
+              <h6 class="text-color">Requisitos</h6>
             </div>
           </div>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-        </div>
-        <!-- team-member -->
-        <div class="team-member" style="border-radius:50px">
-          <div class="d-flex mb-4">
-            <div class="mr-3">
-              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-1.jpg')}}" alt="team-member">
-            </div>
-            <div class="align-self-center">
-              <h4>Becroft</h4>
-              <h6 class="text-color">web designer</h6>
-            </div>
-          </div>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-        </div>
-        <!-- team-member -->
-        <div class="team-member" style="border-radius:50px">
-          <div class="d-flex mb-4">
-            <div class="mr-3">
-              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-1.jpg')}}" alt="team-member">
-            </div>
-            <div class="align-self-center">
-              <h4>Becroft</h4>
-              <h6 class="text-color">web designer</h6>
-            </div>
-          </div>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-        </div>
-        <!-- team-member -->
-        <div class="team-member" style="border-radius:50px">
-          <div class="d-flex mb-4">
-            <div class="mr-3">
-              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-1.jpg')}}" alt="team-member">
-            </div>
-            <div class="align-self-center">
-              <h4>Becroft</h4>
-              <h6 class="text-color">web designer</h6>
-            </div>
-          </div>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-        </div>
-        <!-- team-member -->
-        <div class="team-member" style="border-radius:50px">
-          <div class="d-flex mb-4">
-            <div class="mr-3">
-              <img class="rounded-circle img-fluid" src="{{ asset('frontend/images/team/team-1.jpg')}}" alt="team-member">
-            </div>
-            <div class="align-self-center">
-              <h4>Becroft</h4>
-              <h6 class="text-color">web designer</h6>
-            </div>
-          </div>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. S eparated they</p>
-        </div>
+          <p>
+            {!! $item->requirement!!}
+          </p> </div>
+        @endforeach
       </div>
     </div>
   </div>

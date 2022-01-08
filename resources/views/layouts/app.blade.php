@@ -31,6 +31,11 @@
         <!-- <link rel="stylesheet" id="css-theme" href="{{ mix('/css/themes/amethyst.css') }}"> -->
         @yield('css_after')
 
+            <style>
+                .block{
+                    border-radius: 1.2rem !important;
+                }
+            </style>
         <!-- Scripts -->
         <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};</script>
     </head>

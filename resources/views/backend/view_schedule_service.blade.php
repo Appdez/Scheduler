@@ -23,7 +23,7 @@
             <p class="mb-0">{{Session::get('fail')}}!</p>
         </div>
     @endif
-<div class="bg-white p-3 push">
+<div class="bg-white p-3 push block">
     <!-- Toggle Navigation -->
     <div class="d-lg-none">
         <!-- Class Toggle, functionality initialized in Helpers.coreToggleClass() -->
@@ -81,7 +81,7 @@
 </div>
 </div>
 @endsection
-@push('js_after')
+@push ('js_after')
       <!-- Page JS Plugins -->
       <script src="{{ asset('js/plugins/ckeditor/ckeditor.js') }}"></script>
 
@@ -92,4 +92,4 @@
     });
 
       </script>
-@endpush
+@endpush 

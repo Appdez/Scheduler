@@ -22,6 +22,7 @@ mix
  .copyDirectory('resources/media','public/media')
  .copyDirectory('resources/fonts','public/fonts')
  .copyDirectory('resources/frontend','public/frontend')
+ .copyDirectory('resources/js/plugins','public/js/plugins')
 
  /* JS */
  .js('resources/js/app.js', 'public/js/laravel.app.js')

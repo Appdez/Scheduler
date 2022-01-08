@@ -23,7 +23,7 @@
     @endif
 
     
-    <div class="bg-white p-3 push">
+    <div class="bg-white p-3 push block">
         <!-- Toggle Navigation -->
         <div class="d-lg-none">
             <!-- Class Toggle, functionality initialized in Helpers.coreToggleClass() -->

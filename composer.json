@@ -5,7 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 | ^8.1",
         "beyondcode/laravel-websockets": "^1.12",
         "brian2694/laravel-toastr": "^5.56",
         "doctrine/dbal": "2.x",
