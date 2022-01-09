@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('css_after')
+@push('css_after')
     <style>
         #page-container.sidebar-o{
             padding-left: 0px !important;
         }
     </style>
-@endsection
+@endpush
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center">

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClientScheduler;
+use App\Models\ScheduleService;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home')->with([
+            'services' => ScheduleService::all(),
+            'users' => User::count(),
+            'schedules' => ClientScheduler::all()
+        ]);
     }
 }

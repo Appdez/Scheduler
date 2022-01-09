@@ -65,6 +65,25 @@
                     <!-- Right Section -->
                     <div class="d-flex align-items-center">
                         <!-- User Dropdown -->
+                        @guest()
+                        
+                        @if (request()->is('register'))
+                        <a href="{{ route('login') }}" class="btn btn-sm btn-dual d-flex align-items-center" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-lock    "></i>
+                            <span class="d-none d-sm-inline-block ml-2">Login</span>
+                        </a>
+                        @elseif (request()->is('login'))
+                            <a href="{{ route('register') }}" class="btn btn-sm btn-dual d-flex align-items-center"aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-file    "></i>
+                            <span class="d-none d-sm-inline-block ml-2">registar - se</span>
+                        </a>
+                        @endif
+
+                        <a href="{{ url('/') }}" class="ml-4 btn btn-sm btn-dual d-flex align-items-center"  aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-home    "></i>
+                            <span class="d-none d-sm-inline-block ml-2">Ínicio</span>
+                        </a>
+                        @endguest
                         @auth
                         <div class="dropdown d-inline-block ml-2">
                             <button type="button" class="btn btn-sm btn-dual d-flex align-items-center" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -122,7 +141,7 @@
         <!-- Laravel Scaffolding JS -->
         <!-- <script src="{{ mix('/js/laravel.app.js') }}"></script> -->
 
-        
+        @stack('chart')
     
    
         <!-- Page JS Plugins -->

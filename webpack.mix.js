@@ -31,6 +31,7 @@ mix
  /* Page JS */
  .js('resources/js/pages/tables_datatables.js', 'public/js/pages/tables_datatables.js')
  .js('resources/js/app.js', 'public/js')
+ .js('resources/js/chart.js', 'public/js/chart.js')
  .disableNotifications()
  /* Options */
  .options({
