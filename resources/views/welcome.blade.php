@@ -25,8 +25,9 @@
   <link href="{{ asset('frontend/css/style.css')}}" rel="stylesheet">
   
   <!--Favicon-->
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="{{ asset('media/favicons/favicon.png') }}">
+  <link rel="icon" sizes="192x192" type="image/png" href="{{ asset('media/favicons/favicon-192x192.png') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('media/favicons/apple-touch-icon-180x180.png') }}">
 
 </head>
 
@@ -40,14 +41,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center zindex-1">
-        <h1 class="mb-3">Faça sua pre marcação agora e proteja - te da <strong>COVID</strong> </h1>
-        <p class="mb-4">Faça sua pre marcaça de onde estiver a qualquer momento.</p>
+        <h1 class="mb-3">Faça sua pre marcação agora e proteja - te da <strong>COVID19</strong> </h1>
+        <p class="mb-4">Protega a ti e a todos evitado filas longas e aglomeração fazendo a pre - marcação do serviço que quer 
+          se benificiar.</p>
         @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                    <a href="{{ url('/home') }}" class="btn btn-secondary btn-lg">Agendar</a>
+                    <a href="{{ route('client_scheduler.index') }}" class="btn btn-secondary btn-lg"><i class="fas fa-calendar-alt    "></i>
+                      Agendar agora</a></a>
                     @else
-                    <a href="{{ route('login') }}" class="btn btn-secondary btn-lg">Agendar</a>
+                    <a href="{{ route('login') }}" class="btn btn-secondary btn-lg">
+                      <i class="fas fa-calendar-alt    "></i>
+                      Agendar agora</a>
                     @endauth
                 </div>
             @endif
@@ -85,8 +90,11 @@
         <h2 class="section-title">Visualize em tempo real quantos estão a sua frente na fila!</h2>
         <p><br>
            <img class="img-fluid w-60" style="border-radius:45px" src="{{ asset('frontend/images/hero-area/african-americans-people-stand-queue-full-length-vector-31037223-1.jpg')}}" alt="form-img">
-       
+          
         </p>
+        <div class="block pt-5">Lembre -se sempre de comprir com as medidas recomendadas pelo ministério da saúde ,<br>
+        enquanto estiver na fila. </div>
+       
       </div>
     </div>
   </div>
@@ -97,6 +105,7 @@
   <img class="seo-bg-shape-2 up-down-animation" src="{{ asset('frontend/images/background-shape/seo-half-cycle.png')}}" alt="bg-shape">
   <img class="seo-bg-shape-3 left-right-animation" src="{{ asset('frontend/images/background-shape/seo-ball-2.png')}}" alt="bg-shape">
 </section>
+
 <!-- /marketing -->
 
 <!-- service -->
@@ -104,16 +113,10 @@
   <div class="container">
     <div class="row justify-content-between">
       <div class="col-md-5 order-2 order-md-1">
-        <h2 class="section-title">Powerful Layout From Top To Bottom</h2>
-        <p class="mb-4">Far far away, behind the word mountains,
-          far from the countries Vokalia and Consonantia,
-          there live the blind texts. Separated they
-          live in Bookmarksgrove right at the coast of the
-          Semantics, a large language ocean.</p>
+        <h3 class="section-title">Continua realizado sua tarefas enquanto tua fila não chega</h3>
+        <p class="mb-4"></p>
         <ul class="pl-0 service-list">
-          <li><i class="ti-layout-tab-window text-purple"></i>Responsive on any device</li>
-          <li><i class="ti-layout-placeholder text-purple"></i>Very easy to customize</li>
-          <li><i class="ti-support text-purple"></i>Effective support</li>
+          
         </ul>
       </div>
       <div class="col-md-7 order-1 order-md-2">
@@ -134,9 +137,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-title">Our Team</h2>
-        <p class="mb-100">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu<br>
-          fugiat nulla pariatur. Excepteur sint occaecat </p>
+        <h2 class="section-title">Serviços do balcao</h2>
+        <p class="mb-100"> </p>
       </div>
     </div>
     <div class="col-10 mx-auto">
