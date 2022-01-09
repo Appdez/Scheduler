@@ -77,4 +77,13 @@ class ClientScheduler extends Model
 	{
 		return $this->hasMany(ClientDocument::class, 'client_schedule_id');
 	}
+
+	public function countService(int $client)
+	{
+		return ClientScheduler::whereDay('scheduled_for',$this->scheduled_for)
+		->whereNull(
+			'scheduled_ended_at'
+		)->where('client_id','<>',$client)
+		->count();
+	}
 }

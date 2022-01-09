@@ -41,9 +41,9 @@
                                
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link{{ request()->is('home') ? ' active' : '' }}" href="/home">
+                                <a class="nav-main-link{{ request()->is('atendimento*') ? ' active' : '' }}" href="/atendimento">
                                     <i class="nav-main-link-icon si si-pin"></i>
-                                    <span class="nav-main-link-name">Atender</span>
+                                    <span class="nav-main-link-name">Atendimento</span>
                                 </a>
                                 
                             </li>

@@ -29,7 +29,7 @@
 
         <!-- You can include a specific file from public/css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="{{ mix('/css/themes/amethyst.css') }}"> -->
-        @yield('css_after')
+        @stack('css_after')
 
             <style>
                 .block{

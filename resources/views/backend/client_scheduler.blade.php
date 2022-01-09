@@ -10,7 +10,8 @@
                     <ol class="breadcrumb breadcrumb-alt">
 
 
-                        <li><a class="breadcrumb-item active btn btn-rounded btn-light" href="{{ route('document.create') }}">
+                        <li><a class="breadcrumb-item active btn btn-rounded btn-light"
+                                href="{{ route('client_scheduler.create') }}">
                                 <i class="nav-main-link-icon fa fa-plus"></i>
                                 <span class="nav-main-link-name">Nova agenda </span>
                             </a></li>
@@ -21,46 +22,102 @@
     </div>
     <div class="content">
         <div class="row">
+            @foreach ($client_schedulers as $schedule)
 
-            <div class="col-md-6">
-                <div class="block block-rounded">
-                    <div class="block-header">
-                        <h3 class="block-title">Serviço <small>Data</small></h3>
-                        <div class="block-options">
-                            <div class="block-options-item">
-                                <span class="badge badge-warning badge-pill">status</span>
-                            </div>
-                            <div class="block-options-item">
-                                <span class="badge badge-primary badge-pill">Posição: 45</span>
-                            </div>
-                            <button type="button" class="btn-block-option">
-                                <i class="far fa-fw fa-trash-alt" alt></i>
-                            </button>
-                            <div class="dropdown">
-                                <button type="button" class="btn-block-option dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">Opções </button>
-                                <div class="dropdown-menu dropdown-menu-right font-size-sm">
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-bell mr-1"></i> News
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-envelope mr-1"></i> Messages
-                                    </a>
-                                    <div role="separator" class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="fa fa-fw fa-calendar-alt mr-1"></i> Remarcar
-                                    </a>
+                @if ($schedule->scheduled_for > now() && $schedule->scheduled_ended_at == null)
+
+                    <div class="col-md-6">
+                        <div class="block block-rounded ">
+                            <div class="block-header">
+                                <h3 class="block-title">{{ $schedule->schedule_service->name }} <small> </small></h3>
+                                <div class="block-options">
+                                    <div class="block-options-item">
+
+                                        <span class="badge badge-warning badge-pill"> Em espera </span>
+                                    </div>
+                                    <div class="block-options-item">
+                                        <span class="badge badge-primary badge-pill">Na fila:
+                                            {{ $schedule->countService(Auth::user()->id) }} </span>
+                                    </div>
+                                    <button type="button" class="btn-block-option"
+                                        onclick="document.getElementById('schedule_{{ $schedule->id }}').submit()">
+                                        <i class="far fa-fw fa-trash-alt" alt></i>
+                                    </button>
+                                    <form action="{{ route('client_scheduler.destroy', $schedule->id) }}" method="post"
+                                        id="schedule_{{ $schedule->id }}">@csrf @method('DELETE')</form>
                                 </div>
+                            </div>
+                            <div class="block-content">
+                                <small>Requisitos</small>
+                                <p>
+                                    {!! $schedule->schedule_service->requirement !!}
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="block-content">
-                        <p>Potenti elit lectus augue eget iaculis vitae etiam, ullamcorper etiam bibendum ad feugiat magna
-                            accumsan dolor, nibh molestie cras hac ac ad massa, fusce ante convallis ante urna molestie
-                            vulputate bibendum tempus ante justo arcu erat accumsan..</p>
+                @elseif ($schedule->scheduled_for < now() && $schedule->scheduled_ended_at == null)
+
+                    <div class="col-md-6">
+                        <div class="block block-rounded bg-danger-light">
+                            <div class="block-header">
+                                <h3 class="block-title">{{ $schedule->schedule_service->name }} <small> </small></h3>
+                                <div class="block-options">
+                                    <div class="block-options-item">
+                                        <span class="badge badge-danger badge-pill"> Atrasado </span>
+                                    </div>
+                                    <button type="button" class="btn-block-option"
+                                        onclick="document.getElementById('schedule_{{ $schedule->id }}').submit()">
+                                        <i class="far fa-fw fa-trash-alt" alt></i>
+                                    </button>
+                                    <form action="{{ route('client_scheduler.destroy', $schedule->id) }}" method="post"
+                                        id="schedule_{{ $schedule->id }}">@csrf @method('DELETE')</form>
+
+
+
+                                </div>
+                            </div>
+                            <div class="block-content">
+                                <small>Requisitos</small>
+                                <p>
+                                    {!! $schedule->schedule_service->requirement !!}
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                @elseif (($schedule->scheduled_for < now() || $schedule->scheduled_for > now()) && $schedule->scheduled_ended_at != null)
+
+
+                    <div class="col-md-6">
+                        <div class="block block-rounded bg-success-light">
+                            <div class="block-header">
+                                <h3 class="block-title">{{ $schedule->schedule_service->name }} <small> </small></h3>
+                                <div class="block-options">
+                                    <div class="block-options-item">
+
+                                        <span class="badge badge-light badge-pill"> Concuído </span>
+                                    </div>
+
+                                    <button type="button" class="btn-block-option"
+                                        onclick="document.getElementById('schedule_{{ $schedule->id }}').submit()">
+                                        <i class="far fa-fw fa-trash-alt" alt></i>
+                                    </button>
+                                    <form action="{{ route('client_scheduler.destroy', $schedule->id) }}" method="post"
+                                        id="schedule_{{ $schedule->id }}">@csrf @method('DELETE')</form>
+
+                                </div>
+                            </div>
+                            <div class="block-content">
+                                <small>Requisitos</small>
+                                <p>
+                                    {!! $schedule->schedule_service->requirement !!}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
+
+            @endforeach
         </div>
     </div>
 @endsection

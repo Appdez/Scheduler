@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientSchedulerController;
+use App\Http\Controllers\CloseSchedulerController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\ScheduleServiceController;
 use App\Models\ClientScheduler;
@@ -28,3 +29,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/schedule_service',ScheduleServiceController::class);
 Route::resource('/document',DocumentController::class);
 Route::resource('client_scheduler', ClientSchedulerController::class);
+Route::get('/atendimento',[CloseSchedulerController::class,'index'])->name('atendimento');
+Route::post('/atendimento/{client_scheduler}',[CloseSchedulerController::class,'close'])->name('atendimento.close');
